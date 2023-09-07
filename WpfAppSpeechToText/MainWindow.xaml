@@ -1,0 +1,67 @@
+﻿<Window x:Class="WpfAppSpeechToText.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppSpeechToText"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Name="buttonSelect" Content="Select File" Margin="1" Click="buttonSelect_Click"/>
+            <TextBox Name="tbFileName" Grid.Column="1" VerticalAlignment="Center" Margin="1"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <CheckBox Name="cbUseMic" Content="Use Mic" VerticalAlignment="Center" Checked="cbUseMic_Checked" Unchecked="cbUseMic_Checked"/>
+            <ComboBox Name="cbMicDevices" Grid.Column="1"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Name="buttonPlay" Content="Play" Grid.Column="0" Margin="1" Click="buttonPlay_Click"/>
+            <Button Name="ButtonRecognize" Content="Recognize" Grid.Column="1" Margin="1" Click="ButtonRecognize_Click"/>
+            <Button Name="ButtonContRecognize" Content="Contineous Recognize" Grid.Column="2" Margin="1" Click="ButtonContRecognize_Click"/>
+        </Grid>
+        <ScrollViewer Grid.Row="3">
+            <TextBox Name="tbText" TextWrapping="Wrap" AcceptsReturn="True"/>
+        </ScrollViewer>
+        <Grid Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Name="buttonTranslate" Content="Translate From Sound" Margin="1" Click="buttonTranslate_Click"/>
+                <Button Name="buttonTranslateText" Content="Translate From Text" Grid.Column="1" Margin="1" Click="buttonTranslateText_Click"/>
+            </Grid>
+            <ScrollViewer Grid.Row="1">
+                <TextBlock Name="tbTranslated" TextWrapping="Wrap"/>
+            </ScrollViewer>
+            <Button Name="buttonSpeak" Content="Speak" Grid.Row="2" Margin="1" Click="buttonSpeak_Click"/>
+        </Grid>
+    </Grid>
+</Window>
